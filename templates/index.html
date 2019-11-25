@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: "Ubuntu Light", sans-serif;
+
+        }
+    </style>
+</head>
+<body style="text-align: center">
+<h1>Weather app</h1>
+<br>
+
+
+<div style="display:flex; justify-content: space-evenly">
+    {% for weather_data in weather_updates %}
+<div>
+    <h3>{{ weather_data.city }}</h3>
+    <img src="http://openweathermap.org/img/wn/{{weather_data.icon}}.png" alt="">
+<!--    <pre>{{chittagong.icon}}</pre>-->
+    <p>{{weather_data.temp | floatformat}} C</p>
+    <p>{{weather_data.weather}}</p>
+</div>
+{% endfor%}
+</div>
+
+
+
+<!--<br>-->
+<!--<div>-->
+<!--    <h3>{{ sylhet.city }}</h3>-->
+<!--    <img src="http://openweathermap.org/img/wn/{{sylhet.icon}}.png" alt="">-->
+<!--&lt;!&ndash;    <pre>{{sylhet.icon}}</pre>&ndash;&gt;-->
+<!--    <p>{{sylhet.weather}}</p>-->
+<!--</div>-->
+</body>
+</html>
